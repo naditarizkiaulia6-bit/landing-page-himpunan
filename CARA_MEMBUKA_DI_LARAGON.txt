@@ -1,0 +1,261 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                  CARA MEMBUKA PROJECT DI LARAGON                           ║
+║                    HMIT Landing Page - Laravel                             ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📋 DAFTAR ISI:
+1. Prasyarat
+2. Langkah-Langkah Setup
+3. Menjalankan Project
+4. Troubleshooting
+5. Tips & Trik
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ PRASYARAT:
+
+Pastikan sudah terinstall:
+  ✓ Laragon (https://laragon.org/)
+  ✓ Project folder di C:\laragon\www\hmit-landing
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 LANGKAH-LANGKAH SETUP (Jalankan 1x saja):
+
+LANGKAH 1: Buka Laragon
+─────────────────────────
+  1. Klik 2x Laragon di desktop
+  2. Tunggu sampai status "Running" (Apache & MySQL hijau)
+  3. Jangan tutup Laragon
+
+LANGKAH 2: Buka Terminal
+─────────────────────────
+  1. Di Laragon, klik tombol "Terminal" atau "Cmder"
+  2. Terminal akan terbuka di folder C:\laragon\www
+
+LANGKAH 3: Navigate ke Project
+──────────────────────────────
+  Ketik di terminal:
+  
+  cd hmit-landing
+  
+  Tekan Enter
+
+LANGKAH 4: Install PHP Dependencies
+────────────────────────────────────
+  Ketik di terminal:
+  
+  composer install
+  
+  Tekan Enter
+  ⏳ Tunggu 5-10 menit sampai selesai
+
+LANGKAH 5: Install JavaScript Dependencies
+───────────────────────────────────────────
+  Ketik di terminal:
+  
+  npm install
+  
+  Tekan Enter
+  ⏳ Tunggu 5-10 menit sampai selesai
+
+LANGKAH 6: Generate Application Key
+────────────────────────────────────
+  Ketik di terminal:
+  
+  php artisan key:generate
+  
+  Tekan Enter
+  ✓ Akan muncul: "Application key set successfully."
+
+═══════════════════════════════════════════════════════════════════════════════
+
+▶️ MENJALANKAN PROJECT (Setiap kali ingin jalankan):
+
+LANGKAH 1: Buka Laragon
+─────────────────────────
+  1. Klik 2x Laragon di desktop
+  2. Tunggu sampai "Running"
+
+LANGKAH 2: Buka Terminal #1 (Laravel Server)
+──────────────────────────────────────────────
+  1. Di Laragon, klik "Terminal" atau "Cmder"
+  2. Ketik:
+  
+     cd C:\laragon\www\hmit-landing
+     php artisan serve
+  
+  3. Tekan Enter
+  4. Akan muncul:
+  
+     Laravel development server started: http://127.0.0.1:8000
+  
+  5. Jangan tutup terminal ini!
+
+LANGKAH 3: Buka Terminal #2 (Vite Dev Server)
+───────────────────────────────────────────────
+  1. Buka terminal baru (Ctrl + Tab di Cmder atau buka terminal baru)
+  2. Ketik:
+  
+     cd C:\laragon\www\hmit-landing
+     npm run dev
+  
+  3. Tekan Enter
+  4. Akan muncul:
+  
+     VITE v... ready in ... ms
+     ➜  Local:   http://localhost:5173/
+  
+  5. Jangan tutup terminal ini!
+
+LANGKAH 4: Buka Browser
+────────────────────────
+  1. Buka browser (Chrome, Firefox, Edge, dll)
+  2. Ketik di address bar:
+  
+     http://localhost:8000
+  
+  3. Tekan Enter
+  4. Website HMIT sudah berjalan! 🎉
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🛑 MENGHENTIKAN PROJECT:
+
+  1. Di Terminal #1 (Laravel): Tekan Ctrl + C
+  2. Di Terminal #2 (Vite): Tekan Ctrl + C
+  3. Tutup terminal
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔄 MENJALANKAN ULANG (Setelah Restart):
+
+  Cukup jalankan LANGKAH 1-4 dari "MENJALANKAN PROJECT"
+  (Tidak perlu install dependencies lagi)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🐛 TROUBLESHOOTING:
+
+MASALAH 1: Port 8000 sudah dipakai
+──────────────────────────────────
+  Error: "Address already in use"
+  
+  Solusi:
+  php artisan serve --port=8001
+  
+  Kemudian akses: http://localhost:8001
+
+MASALAH 2: npm command not found
+────────────────────────────────
+  Error: "'npm' is not recognized"
+  
+  Solusi:
+  - Gunakan Terminal Laragon (Cmder) bukan Command Prompt biasa
+  - Atau install Node.js dari https://nodejs.org/
+
+MASALAH 3: CSS/JS tidak muncul
+──────────────────────────────
+  Gejala: Halaman terlihat plain tanpa styling
+  
+  Solusi:
+  1. Pastikan Terminal #2 (npm run dev) berjalan
+  2. Tekan Ctrl + Shift + Delete di browser (clear cache)
+  3. Tekan Ctrl + F5 (hard refresh)
+
+MASALAH 4: Halaman blank atau error 500
+────────────────────────────────────────
+  Solusi:
+  1. Cek file: storage/logs/laravel.log
+  2. Jalankan: php artisan cache:clear
+  3. Restart Laravel server
+
+MASALAH 5: Composer install gagal
+──────────────────────────────────
+  Solusi:
+  composer clear-cache
+  composer install
+
+═══════════════════════════════════════════════════════════════════════════════
+
+💡 TIPS & TRIK:
+
+TIP 1: Mengubah Konten
+──────────────────────
+  Edit file: resources/views/landing/index.blade.php
+  Refresh browser (Ctrl + F5)
+
+TIP 2: Mengubah Warna
+─────────────────────
+  Edit file: resources/css/app.css
+  Cari bagian :root { ... }
+  Ubah warna sesuai keinginan
+  Refresh browser (Ctrl + F5)
+
+TIP 3: Mengubah Styling
+───────────────────────
+  Edit file: resources/css/app.css
+  Ubah CSS sesuai keinginan
+  Refresh browser (Ctrl + F5)
+
+TIP 4: Mengubah Interaktivitas
+──────────────────────────────
+  Edit file: resources/js/app.js
+  Ubah JavaScript sesuai keinginan
+  Refresh browser (Ctrl + F5)
+
+TIP 5: Menggunakan Virtual Host
+────────────────────────────────
+  1. Di Laragon, klik "Menu" → "Preferences"
+  2. Aktifkan "Auto Virtual Hosts"
+  3. Edit C:\Windows\System32\drivers\etc\hosts (Run as Admin)
+  4. Tambahkan: 127.0.0.1   hmit-landing.local
+  5. Akses: http://hmit-landing.local:8000
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📚 DOKUMENTASI LENGKAP:
+
+  Baca file-file berikut untuk informasi lebih detail:
+  
+  - QUICK_START.md          → Setup cepat (5 menit)
+  - PANDUAN_LARAGON.md      → Panduan lengkap Laragon
+  - README_SETUP.md         → Setup detail & customization
+  - FITUR_DAN_STRUKTUR.md   → Fitur & cara customize
+  - TROUBLESHOOTING.md      → Troubleshooting lengkap
+  - PROJECT_STRUCTURE.md    → Struktur project
+  - DOKUMENTASI.md          → Index semua dokumentasi
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ CHECKLIST SEBELUM MULAI:
+
+  [ ] Laragon sudah terinstall
+  [ ] Project folder ada di C:\laragon\www\hmit-landing
+  [ ] Sudah baca file ini
+  [ ] Siap untuk mulai
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎉 SELAMAT!
+
+Anda sudah siap untuk menjalankan project HMIT Landing Page!
+
+Ikuti langkah-langkah di atas dan website akan berjalan di:
+http://localhost:8000
+
+Jika ada masalah, baca bagian TROUBLESHOOTING atau file TROUBLESHOOTING.md
+
+Happy Coding! 🚀
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📞 KONTAK:
+
+Email: hmit@universitas.ac.id
+Telepon: +62 812-3456-7890
+Lokasi: Gedung Informatika, Kampus Utama
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Terakhir diupdate: April 2024
