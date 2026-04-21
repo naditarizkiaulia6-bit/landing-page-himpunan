@@ -1,8 +1,6 @@
-@extends('layouts.app')
+<?php $__env->startSection('title', 'HMIT - Himpunan Mahasiswa Informatika'); ?>
 
-@section('title', 'HMIT - Himpunan Mahasiswa Informatika')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
@@ -259,7 +257,7 @@
                 </div>
                 <div class="contact-form">
                     <form action="#" method="POST">
-                        @csrf
+                        <?php echo csrf_field(); ?>
                         <input type="text" placeholder="Nama Anda" required>
                         <input type="email" placeholder="Email Anda" required>
                         <textarea placeholder="Pesan Anda" rows="5" required></textarea>
@@ -269,5 +267,7 @@
             </div>
         </div>
     </section>
-@endsection
+<?php $__env->stopSection(); ?>
 
+
+<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\laragon\www\himpunan\hmit-landing\resources\views/landing/index.blade.php ENDPATH**/ ?>
