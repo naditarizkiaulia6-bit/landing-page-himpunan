@@ -21,13 +21,17 @@ class LandingController extends Controller
         return view('landing.programs');
     }
 
-    public function events(): View
+    public function prestasi(): View
     {
-        return view('landing.events');
+        return view('landing.prestasi');
     }
 
     public function contact(): View
     {
         return view('landing.contact');
+    }
+    public function daftar()
+    {
+        return view('landing.daftar');
     }
 }

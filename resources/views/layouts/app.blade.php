@@ -21,8 +21,11 @@
                     <li><a href="{{ route('home') }}" class="nav-link">Beranda</a></li>
                     <li><a href="{{ route('about') }}" class="nav-link">Tentang</a></li>
                     <li><a href="{{ route('programs') }}" class="nav-link">Program</a></li>
-                    <li><a href="{{ route('events') }}" class="nav-link">Acara</a></li>
+                    <li><a href="{{ route('prestasi') }}" class="nav-link">Prestasi</a></li>
                     <li><a href="{{ route('contact') }}" class="nav-link">Kontak</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/daftar">Daftar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/aspirasi">Aspirasi</a></li>
+                    <li class="nav-item"><a class="nav-link nav-login" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -57,13 +60,13 @@
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 HMIT. Semua hak dilindungi.</p>
+                <p>&copy; 2026 HMIT. Semua hak dilindungi.</p>
             </div>
         </div>
     </footer>
